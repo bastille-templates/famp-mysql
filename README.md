@@ -1,8 +1,8 @@
 # FAMP (FreeBSD, Apache, MySQL, PHP/PHPMyAdmin)
 ## Now apply template to container
 ```sh
-bastille bootstrap https://github.com/bastille-templates/famp
-bastille template famp bastille-templates/famp
+bastille bootstrap https://github.com/bastille-templates/famp-mysql
+bastille template famp bastille-templates/famp-mysql
 ```
 
 ## License
