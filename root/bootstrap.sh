@@ -4,7 +4,8 @@ sed -i -e "s|\$cfg\['blowfish_secret'\] = .*;|\$cfg['blowfish_secret'] = \\\sodi
 echo 'Verify .....'
 grep "blowfish_secret" /usr/local/www/phpMyAdmin/config.inc.php
 
-DB_ROOT_PASSWORD=$(openssl rand -base64 8) && export DB_ROOT_PASSWORD && echo $DB_ROOT_PASSWORD >> /root/db_root_pwd.txt
+pkg install -y expect
+DB_ROOT_PASSWORD=$(openssl rand -base64 8) && export DB_ROOT_PASSWORD && echo $DB_ROOT_PASSWORD > /root/db_root_pwd.txt
 
 SECURE_MYSQL=$(expect -c "
 set timeout 10
